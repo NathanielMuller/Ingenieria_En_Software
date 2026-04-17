@@ -1,0 +1,23 @@
+---
+config:
+  theme: dark
+  layout: dagre
+---
+flowchart TB
+    A(["Inicio"]) --> B["Ingresar fecha de entrada y salida"]
+    B --> C["Solicitar consulta de disponibilidad"]
+    C --> D["Validar formato y rango de fechas"]
+    D --> E{"Fechas validas"}
+    E -- No --> F["Mostrar mensaje de error"]
+    F --> B
+    E -- Si --> G["Buscar habitaciones disponibles"]
+    G --> H{"Existen habitaciones disponibles"}
+    H -- No --> I["Informar que no hay disponibilidad"]
+    I --> J(["Fin"])
+    H -- Si --> K["Mostrar lista de habitaciones disponibles"]
+    K --> L["Seleccionar habitacion"]
+    L --> M["Mostrar detalle de habitacion, imagenes y equipamiento"]
+    M --> N{"Desea continuar con la reserva"}
+    N -- No --> J
+    N -- Si --> O["Pasar al flujo de reserva"]
+    O --> J

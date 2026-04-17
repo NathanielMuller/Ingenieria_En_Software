@@ -1,0 +1,27 @@
+---
+config:
+  theme: dark
+---
+flowchart TD
+    A([Inicio]) --> B[Cliente inicia sesion o se registra]
+    B --> C[Seleccionar habitacion y dias de estadia]
+    C --> D[Validar disponibilidad para el rango solicitado]
+    D --> E{Habitacion disponible}
+    E -- No --> F[Informar conflicto de disponibilidad]
+    F --> G([Fin])
+    E -- Si --> H[Calcular valor total de la estadia]
+    H --> I[Calcular pago inicial del 30 por ciento]
+    I --> J[Mostrar resumen de reserva y pago]
+    J --> K{Cliente confirma la reserva}
+    K -- No --> G
+    K -- Si --> L[Registrar reserva en estado pendiente o confirmada]
+    L --> M[Registrar pago inicial]
+    M --> N{Pago registrado correctamente}
+    N -- No --> O[Notificar error de pago y mantener reserva pendiente]
+    O --> G
+    N -- Si --> P[Actualizar estado de reserva a confirmada]
+    P --> Q[Generar ticket de reserva]
+    Q --> R[Generar codigo QR]
+    R --> S[Enviar confirmacion por correo]
+    S --> T[Mostrar confirmacion final al cliente]
+    T --> G
