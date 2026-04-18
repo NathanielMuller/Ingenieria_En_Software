@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacific Reef | Panel Administrativo</title>
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="dashboard-body">
+    <main class="container-fluid">
+        <div class="row min-vh-100">
+            <aside class="col-xl-2 dashboard-sidebar p-4">
+                <a class="brand-mark text-decoration-none" href="index.html">Pacific Reef</a>
+                <p class="sidebar-label mt-4 mb-3">Panel administrativo</p>
+                <nav class="nav flex-column dashboard-nav gap-2">
+                    <a class="active" href="#">Reservas</a>
+                    <a href="#">Clientes</a>
+                    <a href="#">Trabajadores</a>
+                    <a href="#">Catalogo</a>
+                    <a href="#">Precios</a>
+                    <a href="#">Reportes</a>
+                </nav>
+            </aside>
+            <section class="col-xl-10 p-4 p-lg-5">
+                <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-4">
+                    <div>
+                        <span class="eyebrow">Vista 7</span>
+                        <h1 class="section-title mb-2">Gestion administrativa</h1>
+                        <p class="text-muted mb-0">Contenedor principal para administrar reservas, usuarios, catalogo, precios y reportes.</p>
+                    </div>
+                    <a class="btn btn-outline-brand" href="trabajador.html">Vista trabajador</a>
+                </div>
+
+                <div class="row g-4 mb-4">
+                    <div class="col-md-6 col-xxl-3">
+                        <div class="metric-card dashboard-metric">
+                            <span>Reservas activas</span>
+                            <strong>42</strong>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xxl-3">
+                        <div class="metric-card dashboard-metric">
+                            <span>Check-in hoy</span>
+                            <strong>8</strong>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xxl-3">
+                        <div class="metric-card dashboard-metric">
+                            <span>Ocupacion</span>
+                            <strong>76%</strong>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xxl-3">
+                        <div class="metric-card dashboard-metric">
+                            <span>Ingresos estimados</span>
+                            <strong>$8.420</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-7">
+                        <div class="content-card p-4 h-100">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h2 class="h5 mb-0">Reservas recientes</h2>
+                                <button class="btn btn-sm btn-light">Filtrar</button>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table align-middle modern-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Codigo</th>
+                                            <th>Cliente</th>
+                                            <th>Fechas</th>
+                                            <th>Estado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>PR-0510</td>
+                                            <td>Valentina Soto</td>
+                                            <td>10-15 May</td>
+                                            <td><span class="table-badge success">Confirmada</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>PR-0511</td>
+                                            <td>Diego Ruiz</td>
+                                            <td>11-13 May</td>
+                                            <td><span class="table-badge warning">Pendiente</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>PR-0512</td>
+                                            <td>Camila Perez</td>
+                                            <td>12-18 May</td>
+                                            <td><span class="table-badge neutral">Modificada</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="content-card p-4 h-100">
+                            <h2 class="h5 mb-3">Modulos visibles</h2>
+                            <div class="chip-row mb-3">
+                                <span class="soft-chip">Reservas</span>
+                                <span class="soft-chip">Clientes</span>
+                                <span class="soft-chip">Trabajadores</span>
+                                <span class="soft-chip">Catalogo</span>
+                                <span class="soft-chip">Precios</span>
+                                <span class="soft-chip">Reportes</span>
+                            </div>
+                            <div class="soft-panel">
+                                <p class="mb-2 fw-semibold">Objetivo de la vista</p>
+                                <p class="mb-0 text-muted">Concentrar la operacion administrativa principal en una interfaz unica, sobria y utilitaria.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
