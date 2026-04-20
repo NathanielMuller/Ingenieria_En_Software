@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacific Reef | Habitaciones</title>
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg nav-shell sticky-top">
+        <div class="container">
+            <a class="navbar-brand brand-mark" href="index.html">Pacific Reef</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="index.html">Inicio</a>
+                <a class="nav-link active" href="habitaciones.html">Habitaciones</a>
+                <a class="nav-link" href="detalle-habitacion.html">Detalle</a>
+                <a class="nav-link" href="reserva.html">Reserva</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container section-space">
+        <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-4">
+            <div>
+                <span class="eyebrow">Vista 2</span>
+                <h1 class="section-title mb-2">Habitaciones disponibles</h1>
+                <p class="text-muted mb-0">Resultado de la consulta por fecha con tarjetas claras y accion inmediata.</p>
+            </div>
+            <div class="filter-box">
+                <span>10 May - 15 May</span>
+                <span class="divider-dot"></span>
+                <span>2 adultos</span>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-3">
+                <aside class="content-card p-4 sticky-filter">
+                    <h2 class="h5 mb-3">Filtros</h2>
+                    <div class="mb-3">
+                        <label class="form-label">Categoria</label>
+                        <select class="form-select">
+                            <option>Todas</option>
+                            <option>Suite</option>
+                            <option>Premium</option>
+                            <option>Standard</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Rango de precio</label>
+                        <input type="range" class="form-range" min="80" max="320" value="210">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Vista</label>
+                        <div class="chip-row">
+                            <span class="soft-chip active-chip">Mar</span>
+                            <span class="soft-chip">Piscina</span>
+                            <span class="soft-chip">Jardin</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-brand w-100">Aplicar filtros</button>
+                </aside>
+            </div>
+
+            <div class="col-lg-9">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <article class="room-card h-100">
+                            <div class="room-image image-one"></div>
+                            <div class="p-4">
+                                <div class="d-flex justify-content-between align-items-start gap-3 mb-2">
+                                    <div>
+                                        <h2 class="h4 mb-1">Suite Coral</h2>
+                                        <p class="text-muted mb-0">2 adultos | Vista al mar | Desayuno</p>
+                                    </div>
+                                    <span class="price-tag">$210</span>
+                                </div>
+                                <p class="mb-3">Espacio sereno con terraza privada, texturas naturales y equipamiento completo para estadias cortas o medias.</p>
+                                <div class="chip-row mb-4">
+                                    <span class="soft-chip">Wifi</span>
+                                    <span class="soft-chip">Aire acondicionado</span>
+                                    <span class="soft-chip">TV</span>
+                                </div>
+                                <div class="d-flex gap-3">
+                                    <a class="btn btn-brand" href="detalle-habitacion.html">Ver detalle</a>
+                                    <a class="btn btn-outline-brand" href="reserva.html">Reservar</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-6">
+                        <article class="room-card h-100">
+                            <div class="room-image image-two"></div>
+                            <div class="p-4">
+                                <div class="d-flex justify-content-between align-items-start gap-3 mb-2">
+                                    <div>
+                                        <h2 class="h4 mb-1">Premium Duna</h2>
+                                        <p class="text-muted mb-0">2 adultos, 1 nino | Vista piscina</p>
+                                    </div>
+                                    <span class="price-tag">$175</span>
+                                </div>
+                                <p class="mb-3">Habitacion luminosa con mobiliario contemporaneo, espacio flexible y acceso comodo al area comun del hotel.</p>
+                                <div class="chip-row mb-4">
+                                    <span class="soft-chip">Bano privado</span>
+                                    <span class="soft-chip">Minibar</span>
+                                    <span class="soft-chip">Escritorio</span>
+                                </div>
+                                <div class="d-flex gap-3">
+                                    <a class="btn btn-brand" href="detalle-habitacion.html">Ver detalle</a>
+                                    <a class="btn btn-outline-brand" href="reserva.html">Reservar</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

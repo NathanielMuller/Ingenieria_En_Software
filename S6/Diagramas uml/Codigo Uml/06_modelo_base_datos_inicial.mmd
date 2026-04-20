@@ -1,0 +1,123 @@
+---
+config:
+  theme: redux-color
+---
+erDiagram
+    ROLES {
+        int id_rol PK
+        string nombre
+        string descripcion
+    }
+
+    USUARIOS {
+        int id_usuario PK
+        int id_rol FK
+        string nombre
+        string apellido
+        string correo
+        string clave_hash
+        string idioma
+        string estado
+        datetime fecha_creacion
+    }
+
+    CLIENTES {
+        int id_cliente PK
+        int id_usuario FK
+        string telefono
+        string documento
+    }
+
+    TRABAJADORES {
+        int id_trabajador PK
+        int id_usuario FK
+        string cargo
+        string estado_laboral
+    }
+
+    CATEGORIAS_HABITACION {
+        int id_categoria PK
+        string nombre
+        string descripcion
+    }
+
+    HABITACIONES {
+        int id_habitacion PK
+        int id_categoria FK
+        string numero
+        string nombre
+        int capacidad
+        string descripcion
+        string estado
+    }
+
+    IMAGENES_HABITACION {
+        int id_imagen PK
+        int id_habitacion FK
+        string url_imagen
+        string texto_alternativo
+        boolean es_principal
+    }
+
+    EQUIPAMIENTOS {
+        int id_equipamiento PK
+        string nombre
+        string descripcion
+    }
+
+    HABITACION_EQUIPAMIENTO {
+        int id_habitacion FK
+        int id_equipamiento FK
+    }
+
+    PRECIOS_HABITACION {
+        int id_precio PK
+        int id_habitacion FK
+        decimal valor_diario
+        date fecha_inicio
+        date fecha_fin
+        string estado
+    }
+
+    RESERVAS {
+        int id_reserva PK
+        int id_cliente FK
+        int id_habitacion FK
+        date fecha_entrada
+        date fecha_salida
+        int cantidad_dias
+        decimal monto_total
+        decimal monto_reserva
+        string estado
+        datetime fecha_creacion
+    }
+
+    PAGOS_RESERVA {
+        int id_pago PK
+        int id_reserva FK
+        decimal monto
+        string medio_pago
+        string estado
+        datetime fecha_pago
+    }
+
+    TICKETS_RESERVA {
+        int id_ticket PK
+        int id_reserva FK
+        string codigo_ticket
+        string codigo_qr
+        datetime fecha_emision
+    }
+
+    ROLES ||--o{ USUARIOS : asigna
+    USUARIOS ||--o| CLIENTES : representa
+    USUARIOS ||--o| TRABAJADORES : representa
+    CATEGORIAS_HABITACION ||--o{ HABITACIONES : clasifica
+    HABITACIONES ||--o{ IMAGENES_HABITACION : contiene
+    HABITACIONES ||--o{ PRECIOS_HABITACION : define
+    HABITACIONES ||--o{ RESERVAS : recibe
+    CLIENTES ||--o{ RESERVAS : realiza
+    RESERVAS ||--o{ PAGOS_RESERVA : registra
+    RESERVAS ||--o| TICKETS_RESERVA : genera
+    HABITACIONES ||--o{ HABITACION_EQUIPAMIENTO : relaciona
+    EQUIPAMIENTOS ||--o{ HABITACION_EQUIPAMIENTO : relaciona

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacific Reef | Inicio</title>
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg nav-shell sticky-top">
+        <div class="container">
+            <a class="navbar-brand brand-mark" href="index.html">Pacific Reef</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="habitaciones.html">Habitaciones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reserva.html">Reserva</a></li>
+                    <li class="nav-item"><a class="nav-link" href="admin.html">Panel admin</a></li>
+                    <li class="nav-item"><a class="btn btn-brand ms-lg-3" href="acceso.html">Ingresar</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <span class="eyebrow">Gestion de Reserva Hotelera</span>
+                    <h1 class="display-title">Reserva con una experiencia clara, rapida y elegante.</h1>
+                    <p class="lead-copy">Prototipo base para el Hotel Pacific Reef con consulta de disponibilidad, reserva online, pago inicial y gestion interna del servicio.</p>
+                    <div class="d-flex flex-wrap gap-3 mt-4">
+                        <a class="btn btn-brand btn-lg" href="#busqueda">Consultar disponibilidad</a>
+                        <a class="btn btn-outline-brand btn-lg" href="habitaciones.html">Ver habitaciones</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="glass-card hero-panel p-4 p-lg-5">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div>
+                                <p class="mini-label mb-1">Estado del hotel</p>
+                                <h2 class="h4 mb-0">Disponibilidad activa</h2>
+                            </div>
+                            <span class="status-pill">Hoy</span>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="metric-card">
+                                    <span>Habitaciones disponibles</span>
+                                    <strong>18</strong>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="metric-card">
+                                    <span>Reserva minima</span>
+                                    <strong>30%</strong>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="soft-panel">
+                                    <p class="mb-2 fw-semibold">Incluye</p>
+                                    <div class="chip-row">
+                                        <span class="soft-chip">Confirmacion QR</span>
+                                        <span class="soft-chip">Catalogo visual</span>
+                                        <span class="soft-chip">Panel administrativo</span>
+                                        <span class="soft-chip">Idioma ES / EN</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pb-5">
+        <section id="busqueda" class="container section-space">
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="content-card p-4 p-lg-5">
+                        <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-4">
+                            <div>
+                                <span class="eyebrow">Vista principal</span>
+                                <h2 class="section-title mb-2">Consulta de disponibilidad</h2>
+                                <p class="text-muted mb-0">Pantalla de inicio para visitantes y clientes. Prioriza claridad, confianza y acceso directo a la reserva.</p>
+                            </div>
+                            <span class="status-outline">Cliente / Visitante</span>
+                        </div>
+                        <form class="row g-3">
+                            <div class="col-md-4">
+                                <label class="form-label">Fecha entrada</label>
+                                <input type="date" class="form-control form-control-lg" value="2026-05-10">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Fecha salida</label>
+                                <input type="date" class="form-control form-control-lg" value="2026-05-15">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Huespedes</label>
+                                <select class="form-select form-select-lg">
+                                    <option>2 adultos</option>
+                                    <option>1 adulto</option>
+                                    <option>2 adultos, 1 nino</option>
+                                </select>
+                            </div>
+                            <div class="col-12 d-flex flex-wrap gap-3 pt-2">
+                                <a class="btn btn-brand btn-lg" href="habitaciones.html">Buscar habitaciones</a>
+                                <button type="button" class="btn btn-light btn-lg">Cambiar idioma</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="content-card p-4 h-100">
+                        <span class="eyebrow">Beneficios</span>
+                        <h3 class="h4 mt-2">Que transmite esta vista</h3>
+                        <ul class="feature-list mt-3 mb-0">
+                            <li>Busqueda inmediata por rango de fechas.</li>
+                            <li>Acceso rapido al catalogo de habitaciones.</li>
+                            <li>Entrada visible a registro e inicio de sesion.</li>
+                            <li>Diseno limpio para web y tablet.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container section-space pt-0">
+            <div class="row g-4">
+                <div class="col-md-6 col-xl-3">
+                    <a class="view-card text-decoration-none" href="habitaciones.html">
+                        <span class="card-step">01</span>
+                        <h3>Resultados</h3>
+                        <p>Listado filtrado con cards de habitaciones disponibles.</p>
+                    </a>
+                </div>
+                <div class="col-md-6 col-xl-3">
+                    <a class="view-card text-decoration-none" href="detalle-habitacion.html">
+                        <span class="card-step">02</span>
+                        <h3>Detalle</h3>
+                        <p>Galeria, equipamiento, precio y decision de reserva.</p>
+                    </a>
+                </div>
+                <div class="col-md-6 col-xl-3">
+                    <a class="view-card text-decoration-none" href="reserva.html">
+                        <span class="card-step">03</span>
+                        <h3>Reserva</h3>
+                        <p>Resumen de estadia, calculo total y pago inicial.</p>
+                    </a>
+                </div>
+                <div class="col-md-6 col-xl-3">
+                    <a class="view-card text-decoration-none" href="admin.html">
+                        <span class="card-step">04</span>
+                        <h3>Gestion</h3>
+                        <p>Panel para reservas, clientes, precios y reportes.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

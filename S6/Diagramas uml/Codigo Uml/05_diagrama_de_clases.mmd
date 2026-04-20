@@ -1,0 +1,129 @@
+---
+config:
+  theme: dark
+---
+classDiagram
+    class Rol {
+        +int idRol
+        +string nombre
+        +string descripcion
+    }
+
+    class Usuario {
+        +int idUsuario
+        +string nombre
+        +string apellido
+        +string correo
+        +string claveHash
+        +string idioma
+        +string estado
+        +iniciarSesion()
+        +cerrarSesion()
+    }
+
+    class Cliente {
+        +int idCliente
+        +string telefono
+        +string documento
+        +registrarse()
+        +realizarReserva()
+    }
+
+    class Trabajador {
+        +int idTrabajador
+        +string cargo
+        +string estadoLaboral
+        +consultarCalendario()
+    }
+
+    class Habitacion {
+        +int idHabitacion
+        +string numero
+        +string nombre
+        +int capacidad
+        +string descripcion
+        +string estado
+        +consultarDisponibilidad()
+    }
+
+    class CategoriaHabitacion {
+        +int idCategoria
+        +string nombre
+        +string descripcion
+    }
+
+    class ImagenHabitacion {
+        +int idImagen
+        +string urlImagen
+        +string textoAlternativo
+        +bool principal
+    }
+
+    class Equipamiento {
+        +int idEquipamiento
+        +string nombre
+        +string descripcion
+    }
+
+    class PrecioHabitacion {
+        +int idPrecio
+        +decimal valorDiario
+        +date fechaInicio
+        +date fechaFin
+        +string estado
+    }
+
+    class Reserva {
+        +int idReserva
+        +date fechaEntrada
+        +date fechaSalida
+        +int cantidadDias
+        +decimal montoTotal
+        +decimal montoReserva
+        +string estado
+        +validarRango()
+        +calcularTotal()
+        +confirmarReserva()
+    }
+
+    class PagoReserva {
+        +int idPago
+        +date fechaPago
+        +decimal monto
+        +string medioPago
+        +string estado
+        +registrarPago()
+    }
+
+    class TicketReserva {
+        +int idTicket
+        +string codigoTicket
+        +string codigoQR
+        +date fechaEmision
+        +generarTicket()
+        +generarQR()
+    }
+
+    class Reporte {
+        +int idReporte
+        +date fechaInicio
+        +date fechaFin
+        +string tipo
+        +generarReporte()
+    }
+
+    Rol "1" --> "0..*" Usuario : asigna
+    Usuario "1" --> "0..1" Cliente : perfilCliente
+    Usuario "1" --> "0..1" Trabajador : perfilTrabajador
+    Cliente "1" --> "0..*" Reserva : realiza
+    Habitacion "1" --> "0..*" Reserva : seReservaEn
+    CategoriaHabitacion "1" --> "0..*" Habitacion : clasifica
+    Habitacion "1" --> "1..*" ImagenHabitacion : contiene
+    Habitacion "*" --> "*" Equipamiento : posee
+    Habitacion "1" --> "0..*" PrecioHabitacion : tiene
+    Reserva "1" --> "0..*" PagoReserva : registra
+    Reserva "1" --> "0..1" TicketReserva : genera
+    Trabajador "0..*" --> "0..*" Reserva : consulta
+    Reporte ..> Reserva : consolida
+    Reporte ..> PagoReserva : consolida
+    Reporte ..> Habitacion : consolida
