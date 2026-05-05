@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacific Reef | Panel Administrativo</title>
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="dashboard-body">
+    <main class="container-fluid">
+        <div class="row min-vh-100">
+            <aside class="col-xl-2 dashboard-sidebar p-4">
+                <a class="brand-mark text-decoration-none" href="index.html">Pacific Reef</a>
+                <p class="sidebar-label mt-4 mb-3">Panel administrativo</p>
+                <nav class="nav flex-column dashboard-nav gap-2">
+                    <a class="active" href="#">Reservas</a>
+                    <a href="#">Clientes</a>
+                    <a href="#">Trabajadores</a>
+                    <a href="#">Catalogo</a>
+                    <a href="#">Precios</a>
+                    <a href="#">Reportes</a>
+                </nav>
+            </aside>
+            <section class="col-xl-10 p-4 p-lg-5">
+                <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-4">
+                    <div>
+                        <span class="eyebrow">Vista 7</span>
+                        <h1 class="section-title mb-2">Gestion administrativa</h1>
+                        <p class="text-muted mb-0">Contenedor principal para administrar reservas, usuarios, catalogo, precios y reportes.</p>
+                    </div>
+                    <div class="d-flex gap-2 align-items-center">
+                        <a class="btn btn-outline-brand" href="trabajador.html">Vista trabajador</a>
+                        <button class="btn btn-outline-secondary" id="admin-logout-btn" type="button">Salir</button>
+                    </div>
+                </div>
+                <div class="d-none" id="admin-message"></div>
+
+                <div class="row g-4 mb-4">
+                    <div class="col-md-6 col-xxl-3">
+                        <div class="metric-card dashboard-metric">
+                            <span>Reservas activas</span>
+                            <strong id="metric-active-reservations">-</strong>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xxl-3">
+                        <div class="metric-card dashboard-metric">
+                            <span>Check-in hoy</span>
+                            <strong id="metric-checkin-today">-</strong>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xxl-3">
+                        <div class="metric-card dashboard-metric">
+                            <span>Ocupacion</span>
+                            <strong id="metric-occupancy">-</strong>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xxl-3">
+                        <div class="metric-card dashboard-metric">
+                            <span>Ingresos estimados</span>
+                            <strong id="metric-income">-</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-7">
+                        <div class="content-card p-4 h-100">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h2 class="h5 mb-0">Reservas recientes</h2>
+                                <button class="btn btn-sm btn-light">Filtrar</button>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table align-middle modern-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Codigo</th>
+                                            <th>Cliente</th>
+                                            <th>Fechas</th>
+                                            <th>Estado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="admin-reservations-body">
+                                        <tr>
+                                            <td colspan="4">Cargando reservas recientes...</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="content-card p-4 h-100">
+                            <div class="d-flex justify-content-between align-items-center mb-3 gap-2 flex-wrap">
+                                <h2 class="h5 mb-0">Catalogo de habitaciones</h2>
+                                <span class="status-outline">Alta rapida</span>
+                            </div>
+                            <form id="admin-room-form" class="row g-3 mb-4">
+                                <input type="hidden" id="room-id" name="roomId">
+                                <div class="col-md-6">
+                                    <label class="form-label" for="room-number">Numero</label>
+                                    <input class="form-control" id="room-number" name="number" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="room-name">Nombre</label>
+                                    <input class="form-control" id="room-name" name="name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="room-category">Categoria</label>
+                                    <select class="form-select" id="room-category" name="categoryId" required>
+                                        <option value="">Selecciona una categoria</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label" for="room-capacity">Capacidad</label>
+                                    <input class="form-control" id="room-capacity" name="capacity" type="number" min="1" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label" for="room-status">Estado</label>
+                                    <select class="form-select" id="room-status" name="status" required>
+                                        <option value="disponible">disponible</option>
+                                        <option value="ocupada">ocupada</option>
+                                        <option value="mantenimiento">mantenimiento</option>
+                                        <option value="inactiva">inactiva</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="room-price">Precio diario</label>
+                                    <input class="form-control" id="room-price" name="price" type="number" min="1" step="1000" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="room-image">URL imagen principal</label>
+                                    <input class="form-control" id="room-image" name="imageUrl" type="url" placeholder="https://...">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label" for="room-description">Descripcion</label>
+                                    <textarea class="form-control" id="room-description" name="description" rows="3"></textarea>
+                                </div>
+                                <div class="col-12 d-flex justify-content-end">
+                                    <button class="btn btn-outline-secondary me-2 d-none" id="cancel-room-edit" type="button">Cancelar</button>
+                                    <button class="btn btn-brand" type="submit">Agregar habitacion</button>
+                                </div>
+                            </form>
+
+                            <div class="soft-panel mb-3">
+                                <p class="mb-2 fw-semibold">Habitaciones recientes</p>
+                                <div class="table-responsive">
+                                    <table class="table align-middle modern-table mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>Numero</th>
+                                                <th>Categoria</th>
+                                                <th>Estado</th>
+                                                <th>Precio</th>
+                                                <th>Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="admin-rooms-body">
+                                            <tr>
+                                                <td colspan="5">Cargando catalogo...</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="assets/js/app-init.js"></script>
+    <script type="module" src="assets/js/pages/admin-page.js"></script>
+</body>
+</html>

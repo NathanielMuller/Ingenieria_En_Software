@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacific Reef | Habitaciones</title>
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg nav-shell sticky-top">
+        <div class="container">
+            <a class="navbar-brand brand-mark" href="index.html">Pacific Reef</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="index.html">Inicio</a>
+                <a class="nav-link active" href="habitaciones.html">Habitaciones</a>
+                <a class="nav-link" href="detalle-habitacion.html">Detalle</a>
+                <a class="nav-link" href="reserva.html">Reserva</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container section-space">
+        <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-4">
+            <div>
+                <span class="eyebrow">Vista 2</span>
+                <h1 class="section-title mb-2">Habitaciones disponibles</h1>
+                <p class="text-muted mb-0">Resultado de la consulta por fecha con tarjetas claras y accion inmediata.</p>
+            </div>
+            <div class="filter-box d-flex align-items-center gap-3 flex-wrap">
+                <span id="search-summary">Cargando parametros de busqueda...</span>
+                <button class="btn btn-sm btn-outline-secondary" id="clear-search" type="button" style="display:none">Ver todo el catalogo</button>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-3">
+                <aside class="content-card p-4 sticky-filter">
+                    <h2 class="h5 mb-3">Filtros</h2>
+                    <div class="mb-3">
+                        <label class="form-label" for="checkin-filter">Fecha de entrada</label>
+                        <input type="date" class="form-control" id="checkin-filter">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="checkout-filter">Fecha de salida</label>
+                        <input type="date" class="form-control" id="checkout-filter">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="guests-filter">Numero de huespedes</label>
+                        <input type="number" class="form-control" id="guests-filter" min="1" max="10" value="1">
+                    </div>
+                    <hr class="my-3">
+                    <div class="mb-3">
+                        <label class="form-label">Categoria</label>
+                        <select class="form-select" id="category-filter">
+                            <option value="">Todas</option>
+                            <option value="turista">Turista</option>
+                            <option value="premium">Premium</option>
+                            <option value="familiar">Familiar</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Precio maximo por noche</label>
+                        <input type="range" class="form-range" id="price-filter" min="65000" max="132000" step="5000" value="132000">
+                        <div class="small text-muted mt-2" id="price-filter-value"></div>
+                    </div>
+                    <button class="btn btn-brand w-100" id="apply-filters" type="button">Buscar disponibilidad</button>
+                </aside>
+            </div>
+
+            <div class="col-lg-9">
+                <div class="row g-4" id="rooms-container">
+                    <div class="col-12">
+                        <div class="content-card p-4">Cargando habitaciones disponibles...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="assets/js/app-init.js"></script>
+    <script type="module" src="assets/js/pages/rooms-page.js"></script>
+</body>
+</html>

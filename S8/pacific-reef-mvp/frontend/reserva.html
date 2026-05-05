@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacific Reef | Reserva</title>
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg nav-shell sticky-top">
+        <div class="container">
+            <a class="navbar-brand brand-mark" href="index.html">Pacific Reef</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="detalle-habitacion.html">Habitacion</a>
+                <a class="nav-link active" href="reserva.html">Reserva</a>
+                <a class="nav-link" href="confirmacion.html">Confirmacion</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container section-space">
+        <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-4">
+            <div>
+                <span class="eyebrow">Vista 5</span>
+                <h1 class="section-title mb-2">Resumen de reserva y pago inicial</h1>
+                <p class="text-muted mb-0">Pantalla central del flujo: validacion de fechas, datos del huesped y calculo automatico del 30 por ciento.</p>
+            </div>
+            <span class="status-outline">Flujo critico</span>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-7">
+                <div class="content-card p-4 p-lg-5">
+                    <h2 class="h4 mb-4">Datos de la reserva</h2>
+                    <div class="alert alert-warning d-none" id="reservation-auth-notice">
+                        Debes iniciar sesion como cliente para confirmar la reserva. <a href="acceso.html">Ir a acceso</a>
+                    </div>
+                    <div class="d-none" id="reservation-message"></div>
+                    <form class="row g-3" id="reservation-form">
+                        <div class="col-md-6">
+                            <label class="form-label">Fecha entrada</label>
+                            <input type="date" class="form-control form-control-lg" name="checkIn" value="2026-05-10">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Fecha salida</label>
+                            <input type="date" class="form-control form-control-lg" name="checkOut" value="2026-05-15">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Nombre del huesped</label>
+                            <input type="text" class="form-control form-control-lg" name="nombre" value="">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Correo</label>
+                            <input type="email" class="form-control form-control-lg" name="correo" value="">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Cantidad de huespedes</label>
+                            <input type="number" min="1" class="form-control form-control-lg" name="guests" value="2">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Metodo de pago</label>
+                            <select class="form-select form-select-lg" name="paymentMethod">
+                                <option value="tarjeta">Tarjeta</option>
+                                <option value="transferencia">Transferencia</option>
+                                <option value="webpay">Webpay</option>
+                                <option value="efectivo">Pago presencial</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Observaciones</label>
+                            <textarea class="form-control" name="observations" rows="3" placeholder="Ejemplo: llegada tarde o requerimiento especial"></textarea>
+                        </div>
+                        <div class="col-12 pt-2">
+                            <button class="btn btn-brand btn-lg" type="submit">Confirmar reserva</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="content-card p-4 booking-summary sticky-filter">
+                    <span class="eyebrow">Calculo</span>
+                    <h2 class="h4 mb-4" id="summary-room-name">Habitacion seleccionada</h2>
+                    <div class="summary-line">
+                        <span id="summary-total-days">-</span>
+                        <strong id="summary-total-amount">-</strong>
+                    </div>
+                    <div class="summary-line">
+                        <span>Impuestos y cargos</span>
+                        <strong>$0</strong>
+                    </div>
+                    <div class="summary-line text-success">
+                        <span>Pago inicial 30%</span>
+                        <strong id="summary-reservation-amount">-</strong>
+                    </div>
+                    <div class="summary-line text-muted small">
+                        <span>Saldo pendiente en check-in</span>
+                        <strong id="summary-pending-amount">-</strong>
+                    </div>
+                    <hr>
+                    <div class="soft-panel">
+                        <p class="mb-2 fw-semibold">Validaciones visibles</p>
+                        <ul class="feature-list mb-0" id="reservation-validations">
+                            <li>Cargando validaciones...</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="assets/js/app-init.js"></script>
+    <script type="module" src="assets/js/pages/reservation-page.js"></script>
+</body>
+</html>
