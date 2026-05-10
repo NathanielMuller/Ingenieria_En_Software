@@ -1,0 +1,25 @@
+---
+config:
+  theme: dark
+  layout: dagre
+---
+flowchart TB
+    A(["Inicio"]) --> B["Administrador inicia sesion"]
+    B --> C["Acceder al panel administrativo"]
+    C --> D{"Seleccionar modulo"}
+    D -- Reservas --> E["Buscar reserva"]
+    E --> F["Modificar o cancelar reserva"]
+    F --> G["Guardar cambios"]
+    D -- Clientes y trabajadores --> H["Administrar datos de clientes"]
+    H --> I["Crear o actualizar cuenta de trabajador"]
+    I --> G
+    D -- Catalogo --> J["Actualizar habitacion, equipamiento o imagenes"]
+    J --> G
+    D -- Precios --> K["Actualizar precio diario por categoria"]
+    K --> G
+    D -- Reportes --> L["Seleccionar fecha o rango de fechas"]
+    L --> M["Generar reporte"]
+    M --> G
+    G --> N["Persistir cambios en el sistema"]
+    N --> O["Confirmar operacion al administrador"]
+    O --> P(["Fin"])

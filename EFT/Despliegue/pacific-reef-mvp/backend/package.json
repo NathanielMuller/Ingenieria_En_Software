@@ -1,0 +1,19 @@
+{
+  "name": "pacific-reef-mvp-backend",
+  "version": "1.0.0",
+  "description": "Backend MVP para Gestion de Reserva Hotelera Pacific Reef.",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "check": "node src/server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mysql2": "^3.14.1",
+    "qrcode": "^1.5.4"
+  }
+}

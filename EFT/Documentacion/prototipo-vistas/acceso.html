@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacific Reef | Acceso</title>
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="auth-body">
+    <main class="container section-space">
+        <div class="row justify-content-center">
+            <div class="col-xl-10">
+                <div class="content-card overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-lg-5 auth-panel p-4 p-lg-5">
+                            <span class="eyebrow text-white-50">Vista 4</span>
+                            <h1 class="display-title text-white mb-3">Acceso de usuarios</h1>
+                            <p class="text-white-50 mb-0">Unifica registro e inicio de sesion para clientes, administradores y trabajadores sin romper la simplicidad del flujo.</p>
+                        </div>
+                        <div class="col-lg-7 p-4 p-lg-5">
+                            <ul class="nav nav-pills auth-tabs mb-4" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#login-pane" type="button">Iniciar sesion</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#register-pane" type="button">Registrarse</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="login-pane">
+                                    <form class="row g-3">
+                                        <div class="col-12">
+                                            <label class="form-label">Correo electronico</label>
+                                            <input class="form-control form-control-lg" type="email" placeholder="cliente@pacificreef.cl">
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label">Contrasena</label>
+                                            <input class="form-control form-control-lg" type="password" placeholder="********">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Perfil</label>
+                                            <select class="form-select form-select-lg">
+                                                <option>Cliente</option>
+                                                <option>Administrador</option>
+                                                <option>Trabajador</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <a class="btn btn-brand btn-lg" href="reserva.html">Entrar al sistema</a>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="tab-pane fade" id="register-pane">
+                                    <form class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label">Nombre</label>
+                                            <input class="form-control form-control-lg" type="text" placeholder="Nathaniel">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Apellido</label>
+                                            <input class="form-control form-control-lg" type="text" placeholder="Muller">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Correo</label>
+                                            <input class="form-control form-control-lg" type="email" placeholder="correo@ejemplo.cl">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Telefono</label>
+                                            <input class="form-control form-control-lg" type="text" placeholder="+56 9 1234 5678">
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label">Contrasena</label>
+                                            <input class="form-control form-control-lg" type="password" placeholder="Crea una contrasena segura">
+                                        </div>
+                                        <div class="col-12">
+                                            <button class="btn btn-brand btn-lg" type="button">Crear cuenta</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
